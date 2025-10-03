@@ -1,0 +1,34 @@
+@import "tailwindcss"; /*eu posso adicionar um prefixo para as propriedades do tailwind logo após o import: @import "tailwindcss" prefix(xy);
+/*assim eu só posso criar propriedades com xy:w-full(tem que add :) etc etc
+/* adicionar plugins do tailwind é diretamente aqui com @plugin "nomedoplugin" desde que esteja instalado no projeto */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@theme {
+  /*screens:{} se tornou --breakpoint-*:initial;
+                    then --breakpoint-sm:xxx
+                         --breakpoint-md:yyy etc etc  */
+
+  /*pra fazer override de color padrão é --color-<cor>-<numDaCor>: <cor desejada>;*/
+  --color-primary: #2b85ff;
+}
+
+@layer base {
+  html {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  body {
+    background-color: #fdeffd;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .input-box {
+    @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none;
+  }
+
+  .btn-primary {
+    @apply w-full text-sm bg-primary text-white p-2 rounded my-1 hover:bg-blue-600;
+  }
+}
