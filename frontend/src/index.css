@@ -1,20 +1,24 @@
 @import "tailwindcss"; /*eu posso adicionar um prefixo para as propriedades do tailwind logo após o import: @import "tailwindcss" prefix(xy);
-/*assim eu só posso criar propriedades com xy:w-full(tem que add :) etc etc
+/*assim eu só posso criar propriedades com xy - <xy:w-full>(tem que add :) etc etc
 /* adicionar plugins do tailwind é diretamente aqui com @plugin "nomedoplugin" desde que esteja instalado no projeto */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @theme {
+  /*o @theme é o equivalente do root: do css padrão*/
   /*screens:{} se tornou --breakpoint-*:initial;
                     then --breakpoint-sm:xxx
                          --breakpoint-md:yyy etc etc  */
 
   /*pra fazer override de color padrão é --color-<cor>-<numDaCor>: <cor desejada>;*/
+
   --color-primary: #2b85ff;
+  --color-secondary: #ef863e;
 }
 
 @layer base {
   html {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
   }
 
   body {
@@ -30,5 +34,13 @@
 
   .btn-primary {
     @apply w-full text-sm bg-primary text-white p-2 rounded my-1 hover:bg-blue-600;
+  }
+
+  .icon-btn {
+    @apply text-xl text-slate-300 cursor-pointer hover:text-primary;
+  }
+
+  .input-label {
+    @apply text-xs text-slate-400;
   }
 }
